@@ -1,0 +1,63 @@
+## HW 1 ##
+Lance Go
+ME333 Winter 2022
+
+
+1.) See helloworld.c and video
+2.) A pointer variable is any variable that points to an address in memory. A regular non-pointer variable stores any value that is not an address.
+3.) Compiled code is code that needs to be compiled into machine code before hand to run. Interpreted code is interpreted during runtime and turned into machine code as it goes.
+4.) (a) 0x1E
+        Binary: 0001 1110
+        Decimal: 030
+        MSB: 0
+    (b) 0x32
+        Binary: 0011 0010
+        Decimal: 050
+        MSB: 0
+    (c) 0xFE
+        Binary: 1111 1110
+        Decimal: 254
+        MSB: 1
+    (d) 0xC4
+        Binary: 1100 0100
+        Decimal: 196
+        MSB: 1
+
+
+6.) 524,288 bits
+7.) (a) 107
+    (b) 53
+    (c) 61
+    (d) 63
+8.) unsigned char = 0 to 225
+    short = -32,768 to 32,767
+    double = about 2.3 * 10^-308 to 1.7 * 10^308
+
+10.) unsigned types do not take into account two's complement and therefore do not have any negative numbers. Signed numbers do have two's complement and so both negative and 
+positive numbers can be represented.
+11.)
+    (a) chars vs. ints: In integer math, ints give you a bigger range than chars so you can do operations with much larger numbers than chars. The main advantage of chars over ints
+    is that chars only take up one byte while ints take up four.
+    (b) floats vs. doubles: Doubles are more precise than floats since they can represent more decimal points. Doubles are eight bytes and floats are four bytes. Doubles are thus
+    more expensive than floats.
+    (c) chars vs. floats: Floats give much more precision than chars. The main advantage of chars over floats is that chars take up less memory than floats.
+
+16.) An unsigned long would be the closest to an eight byte pointer. An unsigned long is also 8 bytes and its minimum value is also 0, similar to an 8 byte pointer. 
+17.) 
+    (a) unknown
+    (b) 0xB0 stored at 0xB8
+        all others the same 
+    (c) 0xB0 stored at 0xB8
+        Same as before, j still unknown
+    (d) 0xB0 stored at 0xB8
+        0xAE stored at 0xB0...0xB3
+    (e) 0xB0 stored at 0xB8
+        0xB0 stored at 0xB9
+        0xAE stored at 0xB0...0xB3
+    (f) 0xB0 stored at 0xB8
+        0xB0 stored at 0xB9
+        0x12 stored at 0xB0...0xB3
+    (g) 0xB0 stored at 0xB8
+        0xB0 stored at 0xB9
+        0x12 stored at 0xB0...0xB3
+        0x12 stored at 0xB4...0xB7
