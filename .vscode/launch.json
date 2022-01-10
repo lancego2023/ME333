@@ -22,11 +22,11 @@
         ""
       ],
       "stopAtEntry": true,
-      "cwd": "/Users/lgo19/Desktop/ME 333/HW 1",
+      "cwd": "/Users/lgo19/Desktop/ME 333/embedded_computing_code/APP_A_Crash_Course",
       "environment": [],
-      "program": "/Users/lgo19/Desktop/ME 333/HW 1/build/Debug/outDebug",
+      "program": "/Users/lgo19/Desktop/ME 333/embedded_computing_code/APP_A_Crash_Course/build/Debug/outDebug",
       "internalConsoleOptions": "openOnSessionStart",
-      "MIMode": "gdb",
+      "MIMode": "lldb",
       "externalConsole": false
     }
   ]
