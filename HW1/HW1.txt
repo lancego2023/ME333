@@ -1,0 +1,52 @@
+HW1
+Lance Go
+
+18.) The GCC compiler has 4 steps: preprocessing, compiling, assembling, and linking.
+    preprocessing: takes c source code and outputs preprocessed code (no comment, preprocessing commands)
+    compiling: takes preprocessed code and outputs assembly code
+    assembling: takes assembly code and outputs machine level binary object code
+    linking: takes object code and produces an executable
+
+19.) main's return type is type int. The standard return is 0. Other non-zero returns are indicative of an error.
+
+21.) 
+    (a) sum = 140
+    (b) sum = 4
+    (c) sum = 24
+
+22.)
+    (a) f  = 0
+    (b) f = 0.666667
+    (c) f = 0;
+    (d) c = 3;
+    (e) c = 3;
+    (f) f = 3;
+
+27.) It depends on the error. If the error is close to the desired result, I might have made a small error like using the wrong arithmetic sign or the wrong logical operator.
+    If this is the case, I tend to just look at error prone spots like long equations. If the result is very far off, I usually go through individual 
+    helper functions and debug step-by-step. When I see that a certain function is not producing the desired output, then I know the bug is somewhere in that function. 
+    Then I can start debugging with that function. I repeat this process until the problem is gone.
+28.) See invest.c
+
+30.)
+    (a) x[1] = 3
+    (b) *x = 4
+    (c) *(x+2) = 2
+    (d) (*x) + 2 = 6
+    (e) *x[3] = error/unknown
+    (f) x[4] = error/unknown
+    (g) *(&(x[1]) + 1) = 2
+
+31.) Final value of i is 5. (5>1) is logical true, so arithmetically that is a 1. k is assigned 2, so k==6 is false which is zero. The result is then 3*1 + 2 + 0 = 5.
+
+32.)
+    (a) 0xF2 (1111 0010)
+    (b) 0x01 (0000 0001)
+    (c) 0x0F (0000 1111)
+    (d) 0x0E (0000 1110)
+    (e) 0x01 (0000 0001)
+    (f) 0x68 (0110 1000)
+    (g) 0x00 (0000 0000)
+
+34.) see ascii.c
+35.) see bubblesort.c
