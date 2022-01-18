@@ -1,0 +1,129 @@
+ME333 Quiz 1
+Lance Go
+
+1.) Overflow happens when some operation cannot fit within the amount of bits specified by the data types in the operation. In
+the event of an overflow, the result of the operation will not be correct. In this example, unsigned chars are 2 byte data types, 
+so the largest possible decimal number is 255. Adding 175 and 100 will cause an overflow. To fix it alter the data types to unsigned ints.
+
+2.) The compiler will see "int numStates" and "#define NUMSTATES" differently. When declared as an int, numStates is a variable, has a
+place in memory, and its value can change by different functions. Using #define, the compiler will see NUMSTATES as an immediate and not
+a variable. Practically speaking, #define NUMSTATES cannot change value during operation.
+
+3.) For each .c file, the compiler will make an individual .o file. After that, the linker will take all of the .o files and compile
+them into one main executable. 
+
+4.)
+(a) 12
+(b) 512
+(c) 107
+(d) 256
+(e) error/unknown
+
+5.) // this is not a function but it would be in main()
+    char alphabet[] = "";
+    char ii = 97;
+    while(ii != 123){
+        *alphabet = ii;
+        printf("%s \n", alphabet);
+        ii++;
+    }
+
+6.) 
+struct car {
+    int id;
+    char brand[50];
+    float miles[10];
+}; 
+
+int main(){
+    struct car volvo;
+    struct car *volvo_pointer;
+
+    volvo_pointer = &volvo;
+
+    volvo.id = 1;
+    volvo.brand[0] = '\0';
+    for(int ii = 0; ii < 10; ii++){
+        volvo.miles[ii] = 0.0;
+    }
+
+    return 0;
+}
+
+7.)
+// the struct from before still applies to this one
+
+void getBrand(char *brand); // explicit decl.
+
+int main(){
+    struct car volvo;
+    struct car *volvo_pointer;
+
+    volvo_pointer = &volvo;
+
+    volvo.id = 1;
+    getBrand(volvo_pointer->brand);
+    for(int ii = 0; ii < 10; ii++){
+        volvo.miles[ii] = 0.0;
+    }
+
+    return 0;
+}
+
+void getBrand(char *brand){
+    printf("enter brand: \n");
+    scanf("%50s", brand);
+
+    return;
+}
+
+8.) 
+ // both of these functions are assuming that the 1st element of miles
+ // is already initialized with a non-zero number
+ // Call these in main() when a struct car has already been initialized
+
+struct car milesVal(struct car car0){
+    float miles1 = car0.miles[0];
+    for (int jj = 1; jj < 10; jj++){
+        miles1 = miles1 * 2;
+        car0.miles[jj] = miles1;
+    }
+
+    return car0;
+}
+
+void milesRef(struct car *car1){
+    float miles1 = car1->miles[0];
+    for (int jj = 1; jj < 10; jj++){
+        miles1 = miles1 * 2;
+        car1->miles[jj] = miles1;
+    }
+    return;
+}
+
+9.)
+
+#include <stdio.h>
+
+int main() {
+    char str[50];
+    int val = 0;
+    printf("enter your string: \n");
+    scanf("%50s", str);
+
+    while(!(val >= 1 && val <= 8)){  // prompts for user input until valid
+        printf("enter your number: \n");
+        scanf("%d", &val);
+    }
+
+    int ii = 0;    // shift part. Used shifts each character until null term reached
+    while(str[ii] != '\0'){
+        str[ii] = str[ii] + val;
+        ii++;
+    }
+
+    printf("shifted string: %s\n", str);
+
+    return 0;
+}
+

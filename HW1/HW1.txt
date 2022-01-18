@@ -26,6 +26,7 @@ Lance Go
     If this is the case, I tend to just look at error prone spots like long equations. If the result is very far off, I usually go through individual 
     helper functions and debug step-by-step. When I see that a certain function is not producing the desired output, then I know the bug is somewhere in that function. 
     Then I can start debugging with that function. I repeat this process until the problem is gone.
+    
 28.) See invest.c
 
 30.)

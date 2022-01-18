@@ -1,0 +1,35 @@
+3.) Pin 12 is an analog input, comparator, change notification input, and a digital I/O. Pin 12 is not 5V Tolerant
+
+4.) TRIS is the register that determines if a pin is input or output.
+
+5.) 0x00C3
+
+6.) SYSCLK: clock for the system
+    PBCLK: clock for the peripheral bus
+    PORTA-G: Digital I/O Ports, from 0v to 3.3v. PORTB allows for analog input.
+    Timer1-5: 16-bit counters/timers that count the pulse from a signal. Can be used to count time.
+    10-bit ADC: Takes analog signals and converts them to digital signals.
+    PWM OC1-5: Can generate pulse width modulated signals.
+    Data RAM: Stores temporary data, lost when the PIC32 is turned off.
+    Program Flash Memory: Memory made to store program; slow but non volatile.
+    Prefetch Cache Module: Stores recently executed program instructions that will be executed again.
+
+7.) Not clocked by PBCLK: Interrupt Priority Controller, USB, CAN, ETHERNET, DMAC, ICD
+
+8.) 0.00322265625 V (3.3/1024)
+
+9.) 256 bytes
+
+10.) The datapath is 128-bits wide so it can keep up with the bandwidth to the CPU, which is 32 bits wide but runs 
+4 times as fast.
+
+11.) Digital I/O can be configured to be an open drain. When set as an ipen drain, the pin has up to a 5.5V pull up and the I/O
+can toggle between the 4 V or to sink and go down to 0 V.
+
+12.) Max amount of flash memory: 2800000 
+    Max amount of RAM: 1D000000
+
+13.)
+    (a) bit 13-12, 01
+    (b) bit 23, bit 20-16, 10100
+    (c) bit 2-0
