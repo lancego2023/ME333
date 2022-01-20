@@ -1,0 +1,11 @@
+Quiz 2
+Lance Go
+1.) 512 Kb
+
+2.) 128 Kb
+
+3.) 80 MHz
+
+4.) Special Function Registers (SFRs)
+ 
+5.) 0V for F0 when its on, Logic High (1)
