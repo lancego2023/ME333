@@ -8,4 +8,4 @@ Lance Go
 
 4.) Special Function Registers (SFRs)
  
-5.) 0V for F0 when its on, Logic High (1)
+5.) Pin F0 is at 0V when LED1 turns on, Pin D7 is logic high (1) when USER is not pushed
