@@ -1,0 +1,87 @@
+HW3
+ME333
+Lance Go
+
+1.)
+    (a) 00000020, cacheable, data RAM
+
+    (b) 00000020, noncacheable, data RAM
+
+    (c) 1F800001, noncacheable, SFRs
+
+    (d) 1FC00111, cacheable, Program Flash
+
+    (e) 1D001000, cacheable, Program Flash
+
+3.) 
+    (a) PORTB: Bits 15:0
+        PORTC: Bits 4:1, 15:12
+        PORTD: Bits 15:0
+        PORTE: Bits 9:0
+        PORTF: Bits 13:0
+        PORTG: Bits 3:2
+        Pin 60 corresponds to RE0
+
+    (b) Unimplemented bits: 31:17, 15:13, 11, 7:5
+        Implemented bits:
+        16 = SS0
+        12 = MVEC
+        10:8 = TPC
+        4:0 = INT4EP, INT3EP, ... , INT0EP
+
+7.) The processor.o file has every single virtual memory address that corresponds to the PIC32's SFRs listed out.
+    When the .hex file is created, the bin2hex operation strips down the .elf file to the bare minimum, which is
+    much smaller in memory than the entirity of processor.o.
+
+8.)
+    (a)
+        # first part loads the address of _main_entry label into reg t0, then jr into address of _main_entry
+        and     a0,a0,0
+        and     a1,a1,0
+        la      t0,_main_entry
+        jr      t0
+
+        # actual main call
+        _main_entry:
+            #if defined(__XC32_LIBC_INIT_ARRAY)
+            /* MUSL C library initialization used with MPLAB XC32 v4.00 and later */
+            la    t0,__libc_init_array
+            jalr  t0
+            nop
+            #endif
+
+            #if defined(CPP_INIT)
+            .weak _init
+            # call .init section to run constructors etc
+            lui	a0,%hi(_init)
+            addiu	sp,sp,-24
+            addiu	a0,a0,%lo(_init)
+            beq	a0,$0,2f
+            sw	$31,20(sp)	 #,
+            jalr	a0
+            nop
+    
+    (b) BF88C340: C2FIFOBA
+        BF88C350: C2FIFOCONn
+        BF88C360: C2FIFOINTn
+        BF88C370: C2FIFOUAn
+        BF88C380: C2FIFOCIn
+
+    (c) There are 10 bit fields:
+        RXBUFELM = <4:0>
+        TXBUFELM = <4:0>
+            These are all 1 bit:
+        SPIBUSY
+        SPITUR
+        SRMT
+        SPIROV
+        SPIRBE
+        SPITBE
+        SPITBF
+        SPIRBF
+        They do coincide with the data sheet.
+
+
+9.) TRISDSET = 0b001100;
+    TRISDCLR = 0b100010;
+    TRISDINV = 0b010001;
