@@ -1,0 +1,12 @@
+Quiz 3
+Lance Go
+1.) data RAM, program flash, and boot flash are all cacheable. The SFRs are not cacheable. This is because the correspond to
+physical devices.
+
+2.) There are 8 bit-fields that are implemented. TRIS15, TRIS14, TRIS13, TRI12, TRIS4, TRIS3, and TRIS2 are initialized after
+reset.
+
+3.) Processor.o provides the virtual memory address, with each microcontroller having its own specific processor.o file. 
+
+4.) The prefetch is designed to give the CPU recently executed instructions The 128-bit bus allows the prefetch module to still
+execute instructions even if other data on the other bus is running slow.
