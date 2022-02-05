@@ -2,12 +2,17 @@ HW 4
 Lance Go
 ME 333
 
-3.4)
+3.4) See simplePIC4.c
 
-3.5) See demonstration video
+3.5) See demonstration video. simplePIC5.c is also attached.
 
-4.1)
+4.1) In NU32.c, the functions NU32_startup, NU32_readUART3, and NU32_writeUART3 are all meant to be used in other C files. 
+    NU32_LED1, NU32_LED2, and NU32_USER are also meant to be used by other C files. NU32_DESIRED_BAUD is meant only for
+    NU32.c since the baud rate is something you would likely not change. NU32_SYS_FREQ could be used by other C files, but
+    likely won't be.
 
-4.2)
+4.2) For PART A: see invest.c
+    For PART B: see helper.c, helper.h, main.c
+    For PART C: see helperc.h, calculate.c, io.c, main_c.c
 
-4.4) See demonstration video
+4.4) See demonstration video. 
