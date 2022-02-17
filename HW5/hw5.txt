@@ -1,0 +1,71 @@
+HW 5
+Lance Go
+
+5.3)
+    (a) Which combinations of data types and arithmetic functions result in a jump to a
+        subroutine? From your disassembly file, copy the C statement and the assembly
+        commands it expands to (including the jump) for one example.
+
+        All of the operations that involve floats or long doubles require "jal". In the
+        long long int operations, only divide needs a "jal" instruction. All other operations
+        do not require "jal."
+
+    (b) For those statements that do not result in a jump to a subroutine, which
+        combination(s) of data types and arithmetic functions result in the fewest assembly
+        commands? From your disassembly, copy the C statement and its assembly
+        commands for one of these examples. Is the smallest data type, char, involved in it? 
+        If not, what is the purpose of extra assembly command(s) for the char data type vs.
+        the int data type? (Hint: the assembly command ANDI takes the bitwise AND of the
+        second argument with the third argument, a constant, and stores the result in the first
+        argument. Or you may wish to look up a MIPS32 assembly instruction reference.)
+
+        For the two data types that are not involved in a jump, char and int, int had the fewer
+        instructions. 
+
+        // char add: c3 = c1+c2;
+        9d002ee4:	93c30010 	lbu	v1,16(s8)
+        9d002ee8:	93c20011 	lbu	v0,17(s8)
+        9d002eec:	00621021 	addu	v0,v1,v0
+        9d002ef0:	304200ff 	andi	v0,v0,0xff
+        9d002ef4:	a3c20048 	sb	v0,72(s8)
+        // int add: i3 = i1+i2;
+        9d002f3c:	8fc30014 	lw	v1,20(s8)
+        9d002f40:	8fc20018 	lw	v0,24(s8)
+        9d002f44:	00621021 	addu	v0,v1,v0
+        9d002f48:	afc2004c 	sw	v0,76(s8)
+
+        The extra instruction in the char vs the int is and andi instruction. This exists to
+        essentially truncate any overflow that could occur from adding two chars. This is not
+        necessary in ints since the size of the general registers is the same size as an int.
+
+    (c) Fill in the following table. Each cell should have two numbers: the number of
+        assembly commands for the specified operation and data type, and the ratio of this
+        number (greater than or equal to 1.0) to the smallest number of assembly commands
+        in the table. For example, if addition of two ints takes four assembly commands, and
+        this is the fewest in the table, then the entry in that cell would be 1.0 (4). This has
+        been filled in below, but you should change it if you get a different result. If a
+        statement results in a jump to a subroutine, write J in that cell.
+
+    (d) From the disassembly, find out the name of any math subroutine that has been added
+        to your assembly code. Now create a map file of the program. Where are the math
+        subroutines installed in virtual memory? Approximately how much program
+        memory is used by each of the subroutines? You can use evidence from the
+        disassembly file and/or the map file. (Hint: You can search backward from the end of
+        your map file for the name of any math subroutines.)
+
+5.4 )
+
+
+6.1)
+
+6.4)
+
+6.5)
+
+6.8)
+
+6.9)
+
+6.16)
+
+6.17)
