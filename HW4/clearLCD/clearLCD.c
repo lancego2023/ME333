@@ -17,7 +17,7 @@ int main() {
         // prints as long as USER not pressed
         while(NU32_USER){
             LCD_Move(0,0);
-            LCD_WriteString("Hello world 12345678");
+            LCD_WriteString(msg);
         }
 
         // clears when its done
