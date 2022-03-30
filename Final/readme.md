@@ -24,5 +24,4 @@ Everything for the final ME333 project needed is found here. Ignore the folders 
 
 #### client.m
 - Menu system
-- relies on read_plot_matrix.m
-- genRef.m
+- relies on read_plot_matrix.m and genRef.m
