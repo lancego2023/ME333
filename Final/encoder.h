@@ -1,11 +1,16 @@
-#ifndef ENCODER_H
-#define ENCODER_H
+#ifndef ENCODER__H__
+#define ENCODER__H__
 
-#include <xc.h>
+#include <xc.h> // processor SFR definitions
+#include <sys/attribs.h> // __ISR macro
 
-// functions
-static int encoder_command(int read);
-int encoder_counts(void);
-void encoder_init(void);
+#include "NU32.h"
 
-#endif
+void UART2_Startup();
+void WriteUART2(const char * string);
+int get_encoder_flag();
+void set_encoder_flag();
+int get_encoder_count();
+
+
+#endif // ENCODER__H__
